@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sh '''
                 sleep 5
-                curl http://localhost:8001/health
+                docker exec fastapi-prod-cicd curl http://localhost:8000/health
                 '''
             }
         }
