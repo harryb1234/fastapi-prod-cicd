@@ -48,7 +48,7 @@ pipeline {
             steps {
                 sh '''
                 sleep 5
-                docker exec fastapi-prod-cicd curl http://localhost:8000/health
+                docker exec fastapi-prod-cicd python -c "import urllib.request; print(urllib.request.urlopen('http://localhost:8000/health').read().decode())"
                 '''
             }
         }
